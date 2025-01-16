@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Syncopate:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --primary: #00ffd5;
+  --secondary: #4d9fff;
+  --bg-dark: #0a1930;
+  --bg-light: #112240;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'JetBrains Mono', monospace;
+  background-color: var(--bg-dark);
+  color: #e6f1ff;
+}
+
+h1, h2, h3, .tech-font {
+  font-family: 'Syncopate', sans-serif;
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Terminal cursor animation */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Experience folder animation */
+.folder-content {
+  width: 0;
+  overflow: hidden;
+  transition: width 0.3s ease-out;
+}
+
+.folder-content.open {
+  width: 100%;
+}
+
+.folder-header {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.folder-header:hover {
+  background-color: var(--bg-light);
+}
+
+/* Decorative symbols */
+.symbol {
+  position: fixed;
+  color: var(--primary);
+  opacity: 0.1;
+  pointer-events: none;
+  font-family: 'JetBrains Mono', monospace;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary);
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 1.125rem;
+  }
+  
+  h1 {
+    font-size: 3.5rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 1.75rem;
+  }
+}
